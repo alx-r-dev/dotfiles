@@ -1,0 +1,11 @@
+**/.DS_Store
+**/.cache/**
+**/.local/share/nvim/**
+**/.local/state/nvim/**
+**/.vim/backup/** **/.vim/swap/** **/.vim/undo/**
+# never commit secrets
+**/.ssh/**
+**/.pgpass
+**/.postgresql/**
+**/*.pem **/*.key **/*.crt
+**/.env* *.env
