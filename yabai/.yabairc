@@ -1,0 +1,44 @@
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+
+# Send all new windows to Space 1
+
+#!/usr/bin/env sh
+
+# No tiling. We just zoom-fullscreen.
+# float-only; we’ll hard-size windows
+
+#!/usr/bin/env sh
+
+# float + instant resizes + no gaps
+yabai -m config layout float
+yabai -m config window_animation_duration 0
+yabai -m config top_padding 0
+yabai -m config bottom_padding 0
+yabai -m config left_padding 0
+yabai -m config right_padding 0
+yabai -m config window_gap 0
+
+# ensure these apps are managed (so resizing works)
+
+# ensure these apps are managed (so resizing works)
+yabai -m rule --add app="^[Gg]hostty$"                manage=on
+yabai -m rule --add app="^Slack$"                     manage=on
+yabai -m rule --add app="^Google Chrome$"             manage=on
+yabai -m rule --add app="^Firefox Developer Edition$" manage=on
+yabai -m rule --add app="^Finder$"                    manage=on
+yabai -m rule --add app="^Microsoft Outlook$"         manage=on
+yabai -m rule --add app="^Microsoft Teams$"           manage=on
+yabai -m rule --add app="^WorkSpaces$"                manage=on
+yabai -m rule --add app="^AWS VPN Client$"            manage=on
+yabai -m rule --add app="^DBeaver$"                   manage=on
+
+# auto-maximize on new/focused windows
+MAX='sh -c '\''if yabai -m query --windows --window >/dev/null 2>&1; then yabai -m window --grid 1:1:0:0:1:1; fi'\'''
+yabai -m signal --add event=window_created action="$MAX"
+yabai -m signal --add event=window_focused action="$MAX"
+
