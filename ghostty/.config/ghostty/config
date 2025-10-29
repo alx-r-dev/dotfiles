@@ -1,0 +1,20 @@
+theme = "dracula"
+font-family = "Fira Code"
+font-size=17
+#line_spacing 2.0
+font-feature=-liga
+font-thicken=true
+cursor-color = #d3fc03
+cursor-text = "#000000"
+cursor-invert-fg-bg = false 
+window-padding-balance = true
+background = #2d3343
+window-padding-x = 1
+window-padding-y = 1
+window-padding-color = background
+# Completely hide titlebar (and therefore the buttons)
+
+# Stay out of fullscreen modes so you remain on the same Space
+macos-non-native-fullscreen = false
+
+macos-window-shadow = false

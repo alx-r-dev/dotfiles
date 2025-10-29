@@ -9,3 +9,4 @@
 **/.postgresql/**
 **/*.pem **/*.key **/*.crt
 **/.env* *.env
+**/.netrwhist
