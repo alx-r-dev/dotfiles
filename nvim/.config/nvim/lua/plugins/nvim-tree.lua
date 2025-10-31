@@ -7,6 +7,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  enabled = false,
   lazy = false,
   opts = {
     filesystem = {

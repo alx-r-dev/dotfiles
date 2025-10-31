@@ -181,11 +181,6 @@ return {
         open_explorer({ cwd = project_root(), toggle = true })
       end, "Explorer (Snacks @ project root)")
 
-      -- Notes explorer (popup) – toggles if already open at notes dir
-      map("n", "<leader>ne", function()
-        open_explorer({ cwd = NOTES_DIR, toggle = true })
-      end, "Explorer (Snacks @ notes)")
-
       -- --------------------------------------------------------------------
       map("n", "<leader>ff", function()
         require("snacks").picker.files()
