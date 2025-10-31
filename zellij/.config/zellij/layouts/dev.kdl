@@ -1,0 +1,53 @@
+
+layout {
+  default_tab_template {
+    // MAIN WORK AREA (top)
+    children
+
+    // STATUS BAR (bottom)
+    pane size=1 borderless=true {
+      plugin name="zjstatus" location="file:/Users/Work/.config/zellij/plugins/zjstatus.wasm" {
+        // Bar background everywhere
+        format_left   "#[bg=#242b38]{mode}#[bg=#242b38]  {tabs}"
+        format_center "#[bg=#242b38]"
+        format_right  "#[bg=#242b38]"
+        format_space  "#[bg=#242b38] "
+        format_hide_on_overlength "true"
+        format_precedence "lcr"
+        border_enabled "false"
+
+        // End every mode badge back on the bar bg
+        mode_normal        "#[bg=#96e072,fg=#242b38,bold] NORMAL #[bg=#242b38]"
+        mode_locked        "#[bg=#c74ded,fg=#242b38,bold] LOCKED  #[bg=#242b38]"
+        mode_resize        "#[bg=#ee5d43,fg=#242b38,bold] RESIZE #[bg=#242b38]"
+        mode_pane          "#[bg=#7cb7ff,fg=#242b38,bold] PANE #[bg=#242b38]"
+        mode_tab           "#[bg=#ff00aa,fg=#242b38,bold] TAB #[bg=#242b38]"
+        mode_scroll        "#[bg=#ffe66d,fg=#242b38,bold] SCROLL #[bg=#242b38]"
+        mode_enter_search  "#[bg=#7cb7ff,fg=#242b38,bold] ENT-SEARCH #[bg=#242b38]"
+        mode_search        "#[bg=#7cb7ff,fg=#242b38,bold] SEARCH #[bg=#242b38]"
+        mode_rename_tab    "#[bg=#ff00aa,fg=#242b38,bold] RENAME-TAB #[bg=#242b38]"
+        mode_rename_pane   "#[bg=#00e8c6,fg=#242b38,bold] RENAME-PANE #[bg=#242b38]"
+        mode_session       "#[bg=#7cb7ff,fg=#242b38,bold] SESSION #[bg=#242b38]"
+        mode_move          "#[bg=#f92672,fg=#242b38,bold] MOVE #[bg=#242b38]"
+        mode_prompt        "#[bg=#7cb7ff,fg=#242b38,bold] PROMPT #[bg=#242b38]"
+        mode_tmux          "#[bg=#f39c12,fg=#242b38,bold] TMUX #[bg=#242b38]"
+
+
+        // ── Tabs: no background; only text color changes ────────────────────
+        // Paint the bar bg everywhere to avoid gaps
+        tab_separator           "#[bg=#242b38,fg=#3c465e] : "
+
+        tab_normal              "#[bg=#242b38,fg=#6b758d]{index} {name}#[bg=#242b38]"
+tab_normal_fullscreen   "#[bg=#242b38,fg=#6b758d]{index} {name}#[bg=#242b38]"
+tab_normal_sync         "#[bg=#242b38,fg=#6b758d]{index} {name}#[bg=#242b38]"
+
+tab_active              "#[bg=#242b38,fg=#ffffff,bold]{index} {name}#[bg=#242b38]"
+tab_active_fullscreen   "#[bg=#242b38,fg=#ffffff,bold]{index} {name}#[bg=#242b38]"
+tab_active_sync         "#[bg=#242b38,fg=#ffffff,bold]{index} {name}#[bg=#242b38]"
+      }
+    }
+  }
+
+  // initial tab
+  tab name="nvim"
+}
