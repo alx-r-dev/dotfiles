@@ -1,0 +1,44 @@
+
+# F-keys from Glove80 layer → instant focus + fullscreen grid
+
+# Ghostty
+f13 : /usr/bin/osascript -e 'tell application "Ghostty" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# Google Chrome (ensure a window exists, then focus)
+f14 : /usr/bin/osascript -e 'tell application "Google Chrome" to if (count of windows) = 0 then make new window' -e 'tell application "Google Chrome" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# Slack (reopen creates a window if needed, then focus)
+f15 : /usr/bin/osascript -e 'tell application "Slack" to reopen' -e 'tell application "Slack" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# Firefox Developer Edition
+f16 : /usr/bin/osascript -e 'tell application "Firefox Developer Edition" to reopen' -e 'tell application "Firefox Developer Edition" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# DBeaver (Java apps behave best with open -ga first)
+f17 : /usr/bin/open -ga "DBeaver" ; /usr/bin/osascript -e 'tell application "DBeaver" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# Finder (guarantee a window, then focus)
+f18 : /usr/bin/osascript -e 'tell application "Finder" to if (count of windows) = 0 then make new Finder window' -e 'tell application "Finder" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# Minimize / restore (unchanged)
+f19 : yabai -m window --minimize
+
+# Left-Shift layer bindings
+
+# LS+F13 → deminimize current window
+lshift - f13 : yabai -m window --deminimize
+
+# LS+F14 → Microsoft Outlook
+lshift - f14 : /usr/bin/osascript -e 'tell application "Microsoft Outlook" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# LS+F15 → Microsoft Teams
+lshift - f15 : /usr/bin/osascript -e 'tell application "Microsoft Teams" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# LS+F16 → WorkSpaces
+lshift - f16 : /usr/bin/osascript -e 'tell application "WorkSpaces" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# LS+F17 → AWS VPN Client
+lshift - f17 : /usr/bin/osascript -e 'tell application "AWS VPN Client" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+
+# LS+F18 → Spotify
+lshift - f18 : /usr/bin/open -ga "Spotify" ; /usr/bin/osascript -e 'tell application "Spotify" to activate' ; yabai -m window --grid 1:1:0:0:1:1
+

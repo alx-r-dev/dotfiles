@@ -5,3 +5,6 @@ if [ ! -d "/Applications/Ghostty.app" ] && ! command -v ghostty >/dev/null 2>&1;
   brew install --cask ghostty
 fi
 echo "apps present."
+
+# skhd (hotkey daemon for yabai)
+command -v skhd >/dev/null 2>&1 || brew install skhd
